@@ -1,0 +1,35 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите число N: ");
+        int n = int.Parse(Console.ReadLine());
+
+
+        Console.Write(GetOddNumbers(n));
+
+        Console.Write("Введите размер V: ");
+        int v = int.Parse(Console.ReadLine());
+
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                Console.Write("X");
+            }
+            Console.WriteLine();
+        }
+
+        static string GetOddNumbers(int n)
+        {
+            string numbers = string.Empty;
+
+            for (int i = 1; i <= n; i += 2)
+                numbers += i + ",";
+
+            return numbers;
+        }
+    }
+}
