@@ -17,19 +17,17 @@ class Program
         {
             for (int j = 0; j < n; j++)
             {
-                Console.Write("X");
-            }
-            Console.WriteLine();
+                if (i == 0 || i == n - 1 || j == 0 || j == n - 1)
+                    Console.Write("X");
+                else
+                    Console.Write(" ");
         }
 
         static string GetOddNumbers(int n)
         {
-            string numbers = string.Empty;
-
-            for (int i = 1; i <= n; i += 2)
-                numbers += i + ",";
-
-            return numbers;
+            return string.Join(",",
+          Enumerable.Range(1, n)
+                   .Where(i => i % 2 == 1));
         }
     }
 }
